@@ -76,7 +76,7 @@ import FormModal from '../FormModal';
    
   return (
     <div>
-<h1 className='text-5xl font-bold text-blue-500 flex justify-center  items-center py-8'>Find best hotels and best price!</h1>
+<h1 className='text-5xl font-bold text-black flex justify-center  items-center py-8 animate-blink'>Get best hotels at best rates!</h1>
 <LocationFilter
         availableLocations={availableLocations}
         onLocationChange={handleLocationChange}
