@@ -48,7 +48,7 @@ const FormModal = ({ isOpen, onClose }) => {
 
   return (
     <div className={`fixed inset-0 bg-black bg-opacity-80 backdrop-blur-sm flex justify-center items-center ${isOpen ? 'visible' : 'hidden'}`}>
-      <div className="bg-white p-8 rounded-lg shadow-md">
+      <div className="bg-white p-2 rounded-lg shadow-md">
         {/* Your form content */}
         <form className="form" onSubmit={handleSubmit}>
     
