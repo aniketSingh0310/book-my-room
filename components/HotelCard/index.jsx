@@ -81,7 +81,17 @@ import FormModal from '../FormModal';
         availableLocations={availableLocations}
         onLocationChange={handleLocationChange}
       />
+      
+      {selectedLocations.length!=0 &&
+      (
+        
+        <h3 className=' flex justify-start pl-4 items-center text-2xl font-bold py-4'>Showing hotels in: {selectedLocations.join(', ')}</h3>
+      )
+
+      }
 <div className='flex flex-row flex-wrap gap-[20px] justify-center items-center'>
+
+      
 
 {isLoading ? (
           <Loading/>
