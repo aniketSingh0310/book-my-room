@@ -37,6 +37,7 @@ import FormModal from '../FormModal';
         setSelectedLocations([...selectedLocations, selectedLocation]);
       }
     };
+    
   
     useEffect(() => {
       if (selectedLocations.length === 0) {

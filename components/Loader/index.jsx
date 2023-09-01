@@ -12,7 +12,7 @@ const Loading = () => {
   <span></span>
   <span></span>
 </div>
-<h3>Loading</h3>
+<h3 className='text-lg font-semibold text-center animate-blink'>Loading</h3>
     </div>
   )
 }
