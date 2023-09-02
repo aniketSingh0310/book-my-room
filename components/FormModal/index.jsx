@@ -11,10 +11,13 @@ const FormModal = ({ isOpen, onClose }) => {
     const [number, setNumber]=useState('');
     const [location, setLocation]=useState('');
     const[guests, setGuests]=useState('');
+    const [loading, setLoading] = useState(false); // Loading state
+  const [successMessage, setSuccessMessage] = useState('');
+
     
     const handleSubmit = async (e) => {
       e.preventDefault();
-  
+      setLoading(true);
       try {
       
       const submissionData = {
@@ -37,10 +40,13 @@ const FormModal = ({ isOpen, onClose }) => {
         setGuests("");
         setLocation("");
         setNumber("");
+        setLoading(false); 
+        setSuccessMessage('Details sent successfully!');
         
         console.log('Message sent successfully! Document ID:', docRef.id);
       } catch (error) {
         console.error('Error sending message:', error);
+        setLoading(false); 
       }
       
     };
@@ -87,12 +93,19 @@ const FormModal = ({ isOpen, onClose }) => {
     </label>
     
     <button href="#" className="fancy">
-      <span className="top-key"></span>
-      <span className="text">submit</span>
-      <span className="bottom-key-1"></span>
-      <span className="bottom-key-2"></span>
-    </button>
+            {loading ? (
+              <span>Loading...</span>
+            ) : (
+              <>
+                <span className="top-key"></span>
+                <span className="text">submit</span>
+                <span className="bottom-key-1"></span>
+                <span className="bottom-key-2"></span>
+              </>
+            )}
+          </button>
 </form>
+{successMessage && <p className="text-green-500">{successMessage}</p>}
 <div className='flex justify-end'>
 
         <button className="mt-4 px-4 py-2 bg-red-500 text-white rounded-lg" onClick={onClose}>Close</button>
